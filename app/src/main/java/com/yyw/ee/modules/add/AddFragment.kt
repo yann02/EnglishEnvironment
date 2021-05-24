@@ -1,18 +1,16 @@
 package com.yyw.ee.modules.add
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.yyw.ee.R
+import com.yyw.ee.databinding.FragmentAddBinding
+import com.yyw.ee.mvvm.view.BaseFragment
 
-class AddFragment : Fragment() {
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_add, container, false)
+class AddFragment : BaseFragment<AddViewModel, FragmentAddBinding>() {
+    override fun getLayoutId() = R.layout.fragment_add
+    override fun initView() {
+        super.initView()
+        mDataBinding.btnBack.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 }
