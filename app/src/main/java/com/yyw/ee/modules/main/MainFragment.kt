@@ -5,6 +5,7 @@ import com.yyw.ee.MainViewModel
 import com.yyw.ee.R
 import com.yyw.ee.databinding.FragmentMainBinding
 import com.yyw.ee.mvvm.view.BaseFragment
+import dagger.hilt.android.scopes.FragmentScoped
 
 class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {
 
